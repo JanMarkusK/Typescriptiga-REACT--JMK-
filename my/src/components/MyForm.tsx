@@ -2,21 +2,24 @@ import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { FormEvent, useState, useEffect } from "react";
 
 export default function MyForm() {
-  // const [form, setForm] = useState({ username: "", password: "" });
+  const [form, setForm] = useState({ username: "", password: "" });
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    // event.preventDefault();
-    // console.log(form);
+    event.preventDefault();
+    console.log(username+password);
   };
 
-  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   setForm((prevForm) => ({
-  //     ...prevForm,
-  //     [event.target.name]: event.target.value,
-  //   }));
-  // };
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setForm((prevForm) => ({
+      ...prevForm,
+      [event.target.name]: event.target.value,
+    }));
+  }  
+  useEffect(() => {
+    console.log(username)
+  });
 
   return (
     <Box
@@ -57,5 +60,4 @@ export default function MyForm() {
         </Stack>
       </form>
     </Box>
-  );
-}
+  )};

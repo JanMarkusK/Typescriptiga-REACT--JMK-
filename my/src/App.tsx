@@ -4,7 +4,7 @@ import './App.css';
 import MyButton from './components/MyButton';
 import MyForm from './components/MyForm';
 import MyContainer from './layout/MyContainer';
-
+import {Outlet} from "react-router-dom"
 
 function App() {
   return (
