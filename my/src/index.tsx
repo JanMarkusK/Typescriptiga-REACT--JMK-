@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AboutMe from './pages/AboutMe'
+import Login from './pages/Login'
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -10,23 +12,19 @@ import {
   RouterProvider
 } from "react-router-dom"
 
+// Define your router with child routes
 const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route
-      path="/"
-      element={<App />}
-    >
-      <Route
-        path="extra"
-        element={<h1>Extra</h1>}
-      />
-      <Route
-        path="contact"
-        element={<h1>Contact</h1>}
-      />
-    </Route>
-  )
-)
+   createRoutesFromElements(
+     <Route
+       path="/" 
+       element={<App />} 
+     >
+       <Route path="/login" element={<Login/>} />
+       <Route path="/about-me" element={<AboutMe/>} />
+     </Route>
+   ),
+   { basename: "/Typescriptiga-REACT--JMK-" }
+ );
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

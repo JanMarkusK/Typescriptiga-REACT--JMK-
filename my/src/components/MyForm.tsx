@@ -19,6 +19,7 @@ export default function MyForm() {
   }  
   useEffect(() => {
     console.log(username)
+    console.log(password)
   });
 
   return (
